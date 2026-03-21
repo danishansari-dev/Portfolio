@@ -29,7 +29,7 @@ const containerVariants = {
             staggerChildren: 0.05,
         },
     },
-};
+} as const;
 
 const chipVariants = {
     hidden: { opacity: 0, y: 30, scale: 0.8 },
@@ -43,7 +43,7 @@ const chipVariants = {
             damping: 20,
         },
     },
-};
+} as const;
 
 /**
  * Skills section with glowing pill/badge chips grouped by category.
