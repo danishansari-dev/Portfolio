@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 20% 3.5%;
+    --foreground: 220 20% 90%;
+
+    --card: 240 15% 7%;
+    --card-foreground: 220 20% 90%;
+
+    --popover: 240 15% 7%;
+    --popover-foreground: 220 20% 90%;
+
+    --primary: 183 100% 50%;
+    --primary-foreground: 240 20% 3.5%;
+
+    --secondary: 37 100% 60%;
+    --secondary-foreground: 240 20% 3.5%;
+
+    --muted: 240 10% 14%;
+    --muted-foreground: 220 10% 55%;
+
+    --accent: 183 100% 50%;
+    --accent-foreground: 240 20% 3.5%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 240 10% 16%;
+    --input: 240 10% 16%;
+    --ring: 183 100% 50%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 240 15% 5%;
+    --sidebar-foreground: 220 20% 90%;
+    --sidebar-primary: 183 100% 50%;
+    --sidebar-primary-foreground: 240 20% 3.5%;
+    --sidebar-accent: 240 10% 14%;
+    --sidebar-accent-foreground: 220 20% 90%;
+    --sidebar-border: 240 10% 16%;
+    --sidebar-ring: 183 100% 50%;
+
+    /* Custom tokens */
+    --glow-cyan: 183 100% 50%;
+    --glow-gold: 37 100% 60%;
+    --surface: 240 12% 10%;
+    --surface-light: 240 10% 14%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  @media (pointer: fine) {
+    body {
+      cursor: none;
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .glow-text-cyan {
+    text-shadow: 0 0 20px hsl(183 100% 50% / 0.5), 0 0 40px hsl(183 100% 50% / 0.2);
+  }
+
+  .glow-text-gold {
+    text-shadow: 0 0 20px hsl(37 100% 60% / 0.5), 0 0 40px hsl(37 100% 60% / 0.2);
+  }
+
+  .glow-border-cyan {
+    box-shadow: 0 0 15px hsl(183 100% 50% / 0.3), inset 0 0 15px hsl(183 100% 50% / 0.05);
+  }
+
+  .glow-border-gold {
+    box-shadow: 0 0 15px hsl(37 100% 60% / 0.3), inset 0 0 15px hsl(37 100% 60% / 0.05);
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(183 100% 50%), hsl(37 100% 60%));
+  }
+
+  .section-container {
+    @apply max-w-6xl mx-auto px-6 md:px-8 py-20 md:py-32;
+  }
+
+  .skill-chip {
+    @apply px-4 py-2 rounded-full text-sm font-medium border transition-all duration-300;
+    background: hsl(240 12% 10% / 0.8);
+    border-color: hsl(240 10% 20%);
+  }
+
+  .skill-chip:hover {
+    border-color: hsl(183 100% 50% / 0.6);
+    box-shadow: 0 0 20px hsl(183 100% 50% / 0.2);
+    background: hsl(183 100% 50% / 0.08);
+  }
+
+  .tilt-card {
+    @apply relative overflow-hidden rounded-xl border border-border p-6 transition-all duration-300;
+    background: hsl(240 12% 8%);
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+
+  .tilt-card:hover {
+    border-color: hsl(183 100% 50% / 0.3);
+    box-shadow: 0 20px 60px hsl(183 100% 50% / 0.1), 0 0 30px hsl(183 100% 50% / 0.05);
+  }
+
+  .timeline-line {
+    @apply absolute left-4 md:left-8 top-0 bottom-0 w-px;
+    background: linear-gradient(180deg, hsl(183 100% 50% / 0.5), hsl(37 100% 60% / 0.5), transparent);
+  }
+
+  .badge-glow {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium border;
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 10px hsl(120 80% 50% / 0.3);
+    }
+    50% {
+      box-shadow: 0 0 25px hsl(120 80% 50% / 0.6);
+    }
+  }
+}
+
+@layer utilities {
+  .cursor-dot {
+    @apply fixed top-0 left-0 w-3 h-3 rounded-full pointer-events-none z-[9999];
+    background: hsl(183 100% 50%);
+    mix-blend-mode: difference;
+    transition: transform 0.15s ease-out;
+  }
+
+  .cursor-dot.hovered {
+    transform: scale(3);
+  }
+}
