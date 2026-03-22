@@ -3,11 +3,16 @@ import ScrollReveal from "./ScrollReveal";
 import { User } from "lucide-react";
 
 const stats = [
-  { label: "Platform Users", value: 500, suffix: "+" },
   { label: "Model Accuracy", value: 90, suffix: "%+" },
   { label: "Deployed Projects", value: 3, suffix: "+" },
 ];
 
+/**
+ * Animated counter component for stats
+ * @param target - The number to count up to
+ * @param suffix - Text to append to the number
+ * @returns JSX Element
+ */
 const Counter = ({ target, suffix }: { target: number; suffix: string }) => {
   const [count, setCount] = useState(0);
   const ref = useRef<HTMLSpanElement>(null);
@@ -61,12 +66,12 @@ const AboutSection = () => (
         </h2>
         <p className="text-muted-foreground leading-relaxed text-lg mb-8">
           I build things that work. From CNNs that detect bone fractures to
-          e-commerce platforms with 500+ users — I bridge the gap between
+          intelligent production systems — I bridge the gap between
           research and real-world products. Final-year B.Tech student in
           Data Science & AI at IIIT Dharwad, shipping production code since day one.
         </p>
 
-        <div className="grid grid-cols-3 gap-6">
+        <div className="grid grid-cols-2 gap-6 max-w-sm">
           {stats.map((s, i) => (
             <ScrollReveal key={s.label} delay={0.3 + i * 0.1}>
               <div className="text-center">
