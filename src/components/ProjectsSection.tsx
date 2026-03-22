@@ -41,7 +41,7 @@ const projects: Project[] = [
   },
   {
     title: "ScrunchCreate",
-    stat: "500+ Users · Sub-2s Load · Zero Backend Cost",
+    stat: "Sub-2s Load · Zero Backend Cost",
     desc: "Production e-commerce platform with automated CI/CD, 200+ product variants, and zero-cost architecture.",
     tags: ["React", "Vite", "GitHub Actions", "CI/CD"],
     icon: <ShoppingBag className="w-7 h-7" />,
