@@ -4,7 +4,8 @@ This project is a personal portfolio showcasing my work as an ML Engineer and Fu
 
 ## Project info
 
-Built with a focus on high-performance, modern web aesthetics and clean UI.
+- **Live URL**: [https://portfolio-alpha-lovat-47.vercel.app/](https://portfolio-alpha-lovat-47.vercel.app/)
+- **Focus**: High-performance ML showcase, modern web aesthetics, and clean UI.
 
 ## Technologies Used
 
