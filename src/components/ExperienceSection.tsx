@@ -8,7 +8,7 @@ const entries = [
     period: "2024 – Present",
     icon: <Briefcase className="w-5 h-5" />,
     points: [
-      "Co-founded a production e-commerce platform serving 500+ monthly users",
+      "Co-founded a production e-commerce platform",
       "Built React + Vite frontend with sub-2s load time",
       "Engineered file-system–driven product system managing 200+ variants with zero backend cost",
       "Implemented CI/CD with GitHub Actions reducing deployment time by 60%",
@@ -20,7 +20,7 @@ const entries = [
     period: "2024 – 2025",
     icon: <Users className="w-5 h-5" />,
     points: [
-      "Led planning and execution of technical events impacting 500+ students",
+      "Led planning and execution of technical events",
       "Managed social media campaigns and publicity initiatives",
     ],
   },
