@@ -7,10 +7,9 @@ import profileImg from "@/assets/profile.jpg";
 
 const firstName = "Mohammad Danish";
 const lastName = "Ansari";
-const roles = ["ML Engineer", "AI & Data Science Student"];
+const roles = ["AI & Data Science Student"];
 
 const stats = [
-  { label: "Platform Users", value: 500, suffix: "+" },
   { label: "Model Accuracy", value: 90, suffix: "%+" },
   { label: "Deployed Projects", value: 3, suffix: "+" },
 ];
@@ -21,6 +20,12 @@ const socialLinks = [
   { icon: <Mail className="w-4 h-4" />, href: "mailto:danishansari.dev@gmail.com", label: "Email" },
 ];
 
+/**
+ * Animated counter component for stats
+ * @param target - The number to count up to
+ * @param suffix - Text to append to the number
+ * @returns JSX Element
+ */
 const Counter = ({ target, suffix }: { target: number; suffix: string }) => {
   const [count, setCount] = useState(0);
   const ref = useRef<HTMLSpanElement>(null);
@@ -220,21 +225,7 @@ const HeroSection = () => {
                 />
               </div>
 
-              {/* Floating badges */}
-              <motion.div
-                className="absolute -right-2 top-8 sm:-right-4 sm:top-10 px-3 py-1.5 rounded-lg bg-card border border-border text-xs font-medium shadow-lg"
-                animate={{ y: [0, -8, 0] }}
-                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-              >
-                <span className="text-primary">🧠</span> ML Engineer
-              </motion.div>
-              <motion.div
-                className="absolute -left-2 bottom-12 sm:-left-6 sm:bottom-16 px-3 py-1.5 rounded-lg bg-card border border-border text-xs font-medium shadow-lg"
-                animate={{ y: [0, 8, 0] }}
-                transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-              >
-                <span className="text-secondary">⚡</span> 500+ Users
-              </motion.div>
+              {/* Floating badges removed as per user request */}
             </div>
           </motion.div>
         </div>
@@ -243,7 +234,7 @@ const HeroSection = () => {
       {/* Stats bar */}
       <div className="relative z-10 w-full max-w-4xl mx-auto px-4 sm:px-6 mt-16 sm:mt-24 mb-20">
         <ScrollReveal>
-          <div className="grid grid-cols-3 gap-3 sm:gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-2 gap-3 sm:gap-4 max-w-2xl mx-auto">
             {stats.map((s, i) => (
               <div key={s.label} className="text-center p-4 sm:p-6 rounded-2xl bg-card/50 border border-border/50 backdrop-blur-sm">
                 <Counter target={s.value} suffix={s.suffix} />
